@@ -1,0 +1,17 @@
+{
+  "name": "eshikivo.tool",
+  "scope": "eshikivo",
+  "displayName": "Eshikivo Game Development Tool",
+  "version": "0.0.1",
+  "unity": "2021.3",
+  "description": "Collection of Game Development tools for Unity",
+  "keywords": [
+  ],
+  "category": "Unity",
+  "hideInEditor": false,
+  "author": {
+    "name": "Eshikivo",
+    "email": "",
+    "url": ""
+  }
+}
