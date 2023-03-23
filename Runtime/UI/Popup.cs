@@ -11,8 +11,22 @@ namespace Eshikivo.UI
         protected static Transform s_container = null;
         protected TaskCompletionSource<TResult> m_tcs;
 
-        public abstract Task<TResult> Open(TPopupParam param);
-        public abstract Task Close();
+        public TaskCompletionSource<TResult> TCS => m_tcs;
+
+        public virtual Task<TResult> Open(TPopupParam param)
+        {
+            m_tcs = new TaskCompletionSource<TResult>();
+
+            return m_tcs.Task;
+        }
+
+        public virtual Task Close()
+        {
+            var tcs = new TaskCompletionSource<object>();
+            tcs.TrySetResult(null);
+
+            return tcs.Task;
+        }
 
         public static Task<TResult> OpenPopup(TPopupParam param, Transform container=null)
         {

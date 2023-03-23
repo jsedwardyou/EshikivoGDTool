@@ -3,15 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemoIOCManager : MonoBehaviour
+namespace Eshikivo.Demo
 {
-    private void Awake()
+    public class DemoIOCManager : MonoBehaviour
     {
-        IOC.Register(this as object); // register as object to use overloaded method
+        private void Awake()
+        {
+            IOC.Register(this as object); // register as object to use overloaded method
+        }
+
+        public void TestMethod()
+        {
+            Debug.Log("DemoIOCManager Loaded!");
+        }
     }
 
-    public void TestMethod()
-    {
-        Debug.Log("DemoIOCManager Loaded!");
-    }
 }

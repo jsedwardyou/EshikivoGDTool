@@ -33,7 +33,7 @@ namespace Eshikivo.Utils.Prefab {
                 componentsObj.InsertArrayElementAtIndex(size);
                 prefabPathsObj.InsertArrayElementAtIndex(size);
 
-                componentsObj.GetArrayElementAtIndex(size).stringValue = prefab.GetType().ToString().Split(".").Last();
+                componentsObj.GetArrayElementAtIndex(size).stringValue = prefab.GetType().ToString();
                 prefabPathsObj.GetArrayElementAtIndex(size).stringValue = prefabPath;
 
                 Debug.Log($"set {prefab.name} path to {prefabPath}");

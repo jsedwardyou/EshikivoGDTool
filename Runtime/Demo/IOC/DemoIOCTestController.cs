@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemoIOCTestController : MonoBehaviour
+namespace Eshikivo.Demo
 {
-    private async void Start()
+    public class DemoIOCTestController : MonoBehaviour
     {
-        var manager = await IOC.Resolve<DemoIOCManager>();
-        manager.TestMethod();
+        private async void Start()
+        {
+            var manager = await IOC.Resolve<DemoIOCManager>();
+            manager.TestMethod();
+        }
     }
+
 }
